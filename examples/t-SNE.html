@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>t-SNE</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300" />
+
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<h1>t-SNE Demo</h1>
+<p>The t-SNE map will load a csv and display it in a 2D plane.
+
+<div id="mydiv"></div>
+
+<script>
+
+	var opts = {path:"../data.csv", width:"700", height:"500", id:"mydiv"};
+	tsne.run(opts);
+
+	//tsne.setPerplexity(50);
+
+</script>
+</body>
+</html>

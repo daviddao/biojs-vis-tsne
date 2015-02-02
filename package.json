@@ -1,0 +1,68 @@
+{
+  "name": "biojs-vis-tsne",
+  "description": "A t-SNE web visualisation for high dimensional data",
+  "version": "0.1.0",
+  "homepage": "https://github.com/daviddao/biojs-vis-tsne",
+  "author": {
+    "name": "David Dao",
+    "email": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/daviddao/biojs-vis-tsne.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daviddao/biojs-vis-tsne/issues"
+  },
+  "licenses": [
+    {
+      "type": "Apache 2",
+      "url": "https://github.com/daviddao/biojs-vis-tsne/blob/master/LICENSE"
+    }
+  ],
+  "main": "lib/index.js",
+  "style": "css/*.css",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "build": "mkdirp build && browserify -r ./:biojs-vis-tsne -o build/tsne.js",
+    "build-browser": "npm run build",
+    "prepublish": "npm run build && npm run css",
+    "watch": "watchify -r ./:biojs-vis-tsne -v -o build/tsne.js",
+    "w": "prunner \"npm run sniper\" \"npm run watch\" \"npm run watch-css\"",
+    "sniper": "biojs-sniper .",
+    "css": "parcelify ./ -c build/bundle.css",
+    "watch-css": "parcelify -w ./ -c build/bundle.css --loglevel verbose"
+  },
+  "dependencies": {
+    "d3": "^3.5.3",
+    "jquery": "^2.1.3",
+    "tsne": "^1.0.0"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.0",
+    "browserify": "6.x",
+    "biojs-sniper": "0.x",
+    "watchify": "^1.0.6",
+    "prunner": "1.x",
+    "parcelify": "0.x"
+  },
+  "sniper": {
+    "js": [
+      "/build/tsne.js"
+    ],
+    "css": [
+      "/build/bundle.css"
+    ],
+    "snippets": [
+      "examples"
+    ],
+    "first": "simple"
+  },
+  "keywords": [
+    "t-SNE",
+    "dimensonality",
+    "visualisation",
+    "perplexity",
+    "biojs"
+  ]
+}
