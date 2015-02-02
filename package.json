@@ -56,7 +56,7 @@
     "snippets": [
       "examples"
     ],
-    "first": "simple"
+    "first": "t-SNE"
   },
   "keywords": [
     "t-SNE",
